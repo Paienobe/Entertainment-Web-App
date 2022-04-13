@@ -1,0 +1,83 @@
+.single-item {
+  width: 48%;
+  margin-bottom: 1rem;
+}
+
+.thumbnail-holder {
+  position: relative;
+  border-radius: 0.8rem;
+  overflow: hidden;
+}
+
+.item-thumbnail {
+  width: 100%;
+  display: block;
+}
+
+.bookmark-symbol {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.75rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.bookmark-symbol img {
+  width: 50%;
+  height: 50%;
+}
+
+.play-modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.play-modal:hover {
+  opacity: 1;
+}
+
+.modal-content {
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.35);
+  padding: 0.25rem;
+  border-radius: 2rem;
+}
+
+.modal-content img {
+  margin-right: 0.5rem;
+}
+
+.item-description {
+  display: flex;
+  align-items: center;
+  font-size: small;
+  font-weight: 200;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 0.35rem;
+}
+
+.single-item h4 {
+  font-weight: 300;
+}
+
+@media (min-width: 650px) {
+  .single-item {
+    width: 30%;
+  }
+}

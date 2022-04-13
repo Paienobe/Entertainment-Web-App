@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Outfit', sans-serif;
+  transition: all 0.25s ease-in-out;
+}
+
+body {
+  background: #10141e;
+  color: white;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  transition: all 0s ease-in-out;
+}
+
+.movies-list,
+.shows-list,
+.bookmarks {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+@media (min-width: 950px) {
+  .movies-list,
+  .shows-list,
+  .bookmarks {
+    padding-left: 8rem;
+  }
+}

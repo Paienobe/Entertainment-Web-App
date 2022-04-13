@@ -1,0 +1,43 @@
+.navbar {
+  background-color: #161d2f;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.categories {
+  width: 40%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.avatar {
+  width: 2.2rem;
+  border: 1px solid white;
+  border-radius: 100%;
+}
+
+@media (min-width: 650px) {
+  .categories {
+    width: 30%;
+  }
+}
+
+@media (min-width: 950px) {
+  .navbar {
+    position: fixed;
+    flex-direction: column;
+    width: 4rem;
+    left: 2rem;
+    height: 85vh;
+    border-radius: 0 0 1rem 1rem;
+  }
+
+  .categories {
+    flex-direction: column;
+    height: 30%;
+  }
+}

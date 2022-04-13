@@ -1,0 +1,17 @@
+.recommended {
+  padding: 1rem;
+}
+
+.recommended-content-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+@media (min-width: 950px) {
+  .recommended {
+    padding-left: 8rem;
+  }
+}
