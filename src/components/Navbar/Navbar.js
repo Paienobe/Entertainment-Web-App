@@ -5,29 +5,51 @@ import './Navbar.css'
 
 // icons
 import logo from '../../assets/logo.svg'
-import home from '../../assets/icon-nav-home.svg'
-import movies from '../../assets/icon-nav-movies.svg'
-import series from '../../assets/icon-nav-tv-series.svg'
-import bookmarks from '../../assets/icon-nav-bookmark.svg'
 import avatar from '../../assets/image-avatar.png'
+import { ReactComponent as Home } from '../../assets/icon-nav-home.svg'
+import { ReactComponent as Bookmarks } from '../../assets/icon-nav-bookmark.svg'
+import { ReactComponent as Movies } from '../../assets/icon-nav-movies.svg'
+import { ReactComponent as Series } from '../../assets/icon-nav-tv-series.svg'
+import { useGlobalContext } from '../../context'
 
 const Navbar = () => {
+  const { currentPage, setCurrentPage } = useGlobalContext()
   return (
     <nav className='navbar'>
       <img src={logo} alt='app_logo' />
 
       <div className='categories'>
         <Link to='/'>
-          <img src={home} alt='home_icon' />
+          <Home
+            fill={currentPage === 'home' ? '#FC4747' : '#5A698F'}
+            onClick={() => {
+              setCurrentPage('home')
+            }}
+          />
         </Link>
         <Link to='/movies'>
-          <img src={movies} alt='movies_icon' />
+          <Movies
+            fill={currentPage === 'movies' ? '#FC4747' : '#5A698F'}
+            onClick={() => {
+              setCurrentPage('movies')
+            }}
+          />
         </Link>
         <Link to='/tvshows'>
-          <img src={series} alt='series_icon' />
+          <Series
+            fill={currentPage === 'series' ? '#FC4747' : '#5A698F'}
+            onClick={() => {
+              setCurrentPage('series')
+            }}
+          />
         </Link>
         <Link to='/bookmarks'>
-          <img src={bookmarks} alt='bookmarks_icon' />
+          <Bookmarks
+            fill={currentPage === 'bookmarks' ? '#FC4747' : '#5A698F'}
+            onClick={() => {
+              setCurrentPage('bookmarks')
+            }}
+          />
         </Link>
       </div>
 

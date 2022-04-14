@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { BsDot } from 'react-icons/bs'
-import movies from '../../assets/icon-nav-movies.svg'
-import series from '../../assets/icon-nav-tv-series.svg'
+import { ReactComponent as Movies } from '../../assets/icon-nav-movies.svg'
+import { ReactComponent as Series } from '../../assets/icon-nav-tv-series.svg'
 import bookMarkEmpty from '../../assets/bookMarkEmpty.svg'
 import bookMarkFill from '../../assets/bookMarkFull.svg'
 import playBtn from '../../assets/icon-play.svg'
@@ -49,16 +49,20 @@ const SingleItem = ({
       <div className='item-description'>
         <p>{year}</p>
         <BsDot />
-        <p>
-          <img
-            src={category.toLowerCase() === 'movie' ? movies : series}
-            alt='category-icon'
-            className='category-icon'
-            style={{ width: '0.8rem', marginRight: '0.25rem' }}
-          />
-
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          {category.toLowerCase() === 'movie' ? (
+            <Movies
+              style={{ transform: 'scale(0.7)', marginRight: '0.30rem' }}
+              fill={'rgba(225,225,225,0.8)'}
+            />
+          ) : (
+            <Series
+              style={{ transform: 'scale(0.7)', marginRight: '0.30rem' }}
+              fill={'rgba(225,225,225,0.8)'}
+            />
+          )}
           {category}
-        </p>
+        </div>
         <BsDot />
         <p>{rating}</p>
       </div>
