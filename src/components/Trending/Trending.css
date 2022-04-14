@@ -24,28 +24,32 @@ h2 {
   position: relative;
 }
 
+.details {
+  height: 100%;
+}
+
 .trending-item img {
   width: 100%;
   height: 100%;
-  object-fit: fill;
+  object-fit: cover;
 }
 
 .description-container {
   position: absolute;
-  bottom: 1rem;
+  bottom: 0.5rem;
   left: 1rem;
 }
 
 .trending-item-description {
   display: flex;
   align-items: center;
-  font-size: small;
+  font-size: smaller;
   font-weight: 200;
   color: rgba(255, 255, 255, 0.8);
 }
 
 .category-icon {
-  width: 0.25rem;
+  transform: scale(0.55);
 }
 
 .trending-item-title {
@@ -56,6 +60,11 @@ h2 {
   .trending-item {
     height: 24vh;
   }
+
+  .trending-item {
+    min-width: 55%;
+    height: 34vh;
+  }
 }
 
 @media (min-width: 950px) {
@@ -64,7 +73,6 @@ h2 {
   }
 
   .trending-item {
-    min-width: 55%;
-    height: 45vh;
+    height: 40vh;
   }
 }

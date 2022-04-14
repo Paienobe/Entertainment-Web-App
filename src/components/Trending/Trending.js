@@ -2,11 +2,11 @@ import React from 'react'
 import { useGlobalContext } from '../../context'
 import './Trending.css'
 import { BsDot } from 'react-icons/bs'
-import movies from '../../assets/icon-nav-movies.svg'
-import series from '../../assets/icon-nav-tv-series.svg'
 import bookMarkEmpty from '../../assets/bookMarkEmpty.svg'
 import bookMarkFill from '../../assets/bookMarkFull.svg'
 import playBtn from '../../assets/icon-play.svg'
+import { ReactComponent as Movies } from '../../assets/icon-nav-movies.svg'
+import { ReactComponent as Series } from '../../assets/icon-nav-tv-series.svg'
 
 const Trending = () => {
   const { myData } = useGlobalContext()
@@ -22,7 +22,7 @@ const Trending = () => {
         {trendingContent.map((item, index) => {
           return (
             <div className='trending-item' key={index}>
-              <div>
+              <div className='details'>
                 <img
                   src={
                     window.innerWidth >= 650
@@ -30,6 +30,7 @@ const Trending = () => {
                       : item?.thumbnail?.trending?.small
                   }
                   alt='thumbnail'
+                  className='trending-item-thumbnail'
                 />
 
                 <div className='bookmark-symbol'>
@@ -52,20 +53,17 @@ const Trending = () => {
                 <div className='trending-item-description'>
                   <p>{item?.year}</p>
                   <BsDot />
-                  <p>
-                    <img
-                      src={
-                        item?.category.toLowerCase() === 'movie'
-                          ? movies
-                          : series
-                      }
-                      alt='category-icon'
-                      className='category-icon'
-                      style={{ width: '1rem', marginRight: '0.25rem' }}
-                    />
+                  <div style={{ display: 'flex', alignItems: 'center' }}>
+                    <div className='category-icon'>
+                      {item?.category.toLowerCase() === 'movie' ? (
+                        <Movies fill={'rgba(255, 255, 255, 0.8)'} />
+                      ) : (
+                        <Series fill={'rgba(255, 255, 255, 0.8)'} />
+                      )}
+                    </div>
 
-                    {item?.category}
-                  </p>
+                    <p>{item?.category}</p>
+                  </div>
                   <BsDot />
                   <p>{item?.rating}</p>
                 </div>

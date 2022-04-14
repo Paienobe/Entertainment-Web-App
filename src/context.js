@@ -5,10 +5,21 @@ const AppContext = React.createContext()
 
 const AppProvider = ({ children }) => {
   const [myData, setMyData] = useState(data)
+  const [currentPage, setCurrentPage] = useState('home')
 
-  console.log(myData)
+  const searchForItem = (pageContent, setPageContent, e) => {
+    const searchResults = pageContent.filter((item) => {
+      return pageContent.title.toLowerCase().contains(e.target.value)
+    })
+    setPageContent(searchResults)
+  }
+
   return (
-    <AppContext.Provider value={{ myData }}>{children}</AppContext.Provider>
+    <AppContext.Provider
+      value={{ myData, currentPage, setCurrentPage, searchForItem }}
+    >
+      {children}
+    </AppContext.Provider>
   )
 }
 
