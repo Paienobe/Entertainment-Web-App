@@ -15,6 +15,7 @@ const SearchBar = () => {
         className='search-box'
         onChange={(e) => {
           setSearchTerm(e.target.value)
+          searchForItem(e.target.value)
         }}
       />
     </div>
