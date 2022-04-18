@@ -12,10 +12,9 @@ const AppProvider = ({ children }) => {
     if (searchTerm) {
       setIsSearching(true)
       const searchResults = data.filter((item) => {
-        return item?.title?.toLowerCase().includes(searchTerm)
+        return item?.title?.toLowerCase().includes(searchTerm.toLowerCase())
       })
       setMyData(searchResults)
-      console.log(searchResults)
     } else {
       setMyData(data)
       setIsSearching(false)
